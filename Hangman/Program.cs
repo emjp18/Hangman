@@ -7,7 +7,7 @@ internal class Program
     
     static void Main(string[] args)
     {
-        void initHangManImage(string[] hangManImage)
+        void InitHangManImage(string[] hangManImage)
         {
             hangManImage[9] = "_|___";
             hangManImage[8] = " |\n_|___";
@@ -21,14 +21,14 @@ internal class Program
             hangManImage[0] = "  _______\n |/      |\n |      (_)\n |      \\|/\n |       |\n |      / \\\n_|___";
         }
         string[] hangManImage = new string[11];
-        initHangManImage(hangManImage);
+        InitHangManImage(hangManImage);
 
-        void printHangmanImage(int triesLeft)
+        void PrintHangmanImage(int triesLeft)
         {
             Console.WriteLine(hangManImage[triesLeft]);
         }
 
-        void initSecretWordsEasy(string[] words)
+        void InitSecretWordsEasy(string[] words)
         {
             words[0] = "BAT";
             words[1] = "RING";
@@ -41,7 +41,7 @@ internal class Program
             words[8] = "FOOD";
             words[9] = "FORK";
         }
-        void initSecretWordsHard(string[] words)
+        void InitSecretWordsHard(string[] words)
         {
             words[0] = "SNOWMAN";
             words[1] = "ENCYCLOPEDIA";
@@ -83,13 +83,13 @@ internal class Program
             answer = answer.ToUpper();
             if (answer == "YES" || answer == "Y")
             {
-                initSecretWordsEasy(secretWords);
+                InitSecretWordsEasy(secretWords);
                 secretWord = secretWords[rnd.Next(10)];
                 
             }
             else
             {
-                initSecretWordsHard(secretWords);
+                InitSecretWordsHard(secretWords);
                 secretWord = secretWords[rnd.Next(10)];
                 
             }
@@ -167,7 +167,7 @@ internal class Program
                     Console.WriteLine("Correct!");
                     Console.WriteLine(chosenWordCharArr);
                     Console.WriteLine("\n.................");
-                    printHangmanImage(tries);
+                    PrintHangmanImage(tries);
                     if (chosenWord==secretWord)
                     {
                         Console.WriteLine("Correct the secret word was: " + secretWord);
@@ -185,7 +185,7 @@ internal class Program
                     Console.WriteLine("Wrong, " + tries + " tries left!");
                     Console.WriteLine(chosenWordCharArr);
                     Console.WriteLine("\n.................");
-                    printHangmanImage(tries);
+                    PrintHangmanImage(tries);
                     
 
                     if (tries == 0)
